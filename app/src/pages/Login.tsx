@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { logWithEmail } from "@/utils/login";
+import { loginWithEmailAndPassword } from "@/utils/login";
 import { useState } from "react";
 
 export type LoginInformation = {
@@ -14,7 +14,7 @@ function Login() {
   const [status, setStatus] = useState("Not logged in");
 
   const onSubmit: SubmitHandler<LoginInformation> = (data) => {
-    const user = logWithEmail(data, setStatus);
+    const user = loginWithEmailAndPassword(data, setStatus);
     console.log(user);
   };
 
