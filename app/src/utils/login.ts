@@ -7,7 +7,11 @@ export async function loginWithEmailAndPassword(data: LoginInformation, setStatu
   try {
     const userCredentials = await signInWithEmailAndPassword(firebaseAuth, data.email, data.password);
     setStatus("Welcome " + userCredentials.user.email);
-    return userCredentials;
+    return {
+      uid: userCredentials.user.uid,
+      email: userCredentials.user.email,
+      displayName: userCredentials.user.displayName,
+    };
   } catch (error) {
     setStatus("Invalid credentials, please try again");
     console.log(error);
