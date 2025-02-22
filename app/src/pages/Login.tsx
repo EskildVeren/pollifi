@@ -5,6 +5,7 @@ import { loginWithEmailAndPassword } from "@/utils/login";
 import { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export type LoginInformation = {
   email: string;
@@ -51,9 +52,7 @@ function Login() {
               </div>
               <div className="mt-4 text-center text-sm">
                 Don&apos;t have an account?{" "}
-                <a href="#" className="underline underline-offset-4">
-                  Sign up
-                </a>
+                <Link to={"/signup/"} className="underline underline-offset-4">Sign up</Link>
               </div>
             </form>
           </CardContent>
