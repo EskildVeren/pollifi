@@ -1,5 +1,5 @@
 import { firebaseAuth } from "@/lib/firebase";
-import { LoginInformation } from "@/pages/Login";
+import { LoginInformation } from "@/pages/LoginPage";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 export async function loginWithEmailAndPassword(data: LoginInformation, setStatus: (status: string) => void) {

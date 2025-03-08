@@ -12,7 +12,7 @@ export type LoginInformation = {
   password: string;
 };
 
-function Login() {
+function LoginPage() {
   const { register, handleSubmit } = useForm<LoginInformation>();
   const [status, setStatus] = useState("Not logged in");
 
@@ -52,7 +52,9 @@ function Login() {
               </div>
               <div className="mt-4 text-center text-sm">
                 Don&apos;t have an account?{" "}
-                <Link to={"/signup/"} className="underline underline-offset-4">Sign up</Link>
+                <Link to={"/signup/"} className="underline underline-offset-4">
+                  Sign up
+                </Link>
               </div>
             </form>
           </CardContent>
@@ -62,4 +64,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginPage;

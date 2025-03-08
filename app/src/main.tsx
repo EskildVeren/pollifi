@@ -1,23 +1,40 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./pages/Login.tsx";
-import SignUp from "./pages/SignUp.tsx";
+import LoginPage from "./pages/LoginPage.tsx";
+import SignUpPage from "./pages/SignUpPage.tsx";
+import HomePage from "./pages/HomePage.tsx";
+import ProfilePage from "./pages/ProfilePage.tsx";
+import EditPollPage from "./pages/EditPollPage.tsx";
+import ErrorPage from "./pages/ErrorPagePage.tsx";
+import PollResponsePage from "./pages/PollResponsePage.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <HomePage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/login/",
-    element: <Login />,
+    element: <LoginPage />,
   },
   {
     path: "/signup/",
-    element: <SignUp />
+    element: <SignUpPage />,
+  },
+  {
+    path: "/profile/",
+    element: <ProfilePage />,
+  },
+  {
+    path: "/polls/:pollId/edit/",
+    element: <EditPollPage />,
+  },
+  {
+    path: "/polls/:pollId/respond/",
+    element: <PollResponsePage />,
   },
 ]);
 
