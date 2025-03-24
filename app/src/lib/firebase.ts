@@ -1,10 +1,7 @@
-// Import the functions you need from the SDKs you need
-
 import { FirebaseApp, FirebaseOptions, initializeApp } from "firebase/app";
-import { connectAuthEmulator, getAuth } from "firebase/auth";
+import { Auth, connectAuthEmulator, getAuth } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
-
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -23,13 +20,24 @@ const firebaseConfig: FirebaseOptions = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID as string,
 };
 
-// Initialise Firebase App
+// Initialises variables to be exported
 const app: FirebaseApp = initializeApp(firebaseConfig);
+let firebaseAuth: Auth;
 
-// Initialise Firebase
+// Reading what mode we are running the program in
+const mode = import.meta.env.MODE;
 
-// const firebaseAuth = getAuth(app); // Uses production authentication services
-const firebaseAuth = getAuth(); // Uses emulator authentication services
-connectAuthEmulator(firebaseAuth, "http://localhost:9099");
+// Uses production firebase services
+if (mode === "production") {
+  console.log("Running in production mode");
+  firebaseAuth = getAuth(app);
+}
+
+// Uses emulator firebase services
+if (mode === "development") {
+  console.log("Running in development mode");
+  firebaseAuth = getAuth();
+  connectAuthEmulator(firebaseAuth, "http://localhost:9099");
+}
 
 export { app, firebaseAuth };

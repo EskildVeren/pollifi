@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm install && vite && firebase emulators:start",
-    "build": "tsc -b && vite build",
+    "dev": "npm install && firebase emulators:start & vite --mode development",
+    "build": "tsc -b && vite build --mode production",
     "lint": "eslint .",
     "preview": "vite preview",
     "emulators": "firebase emulators:start"
