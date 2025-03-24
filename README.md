@@ -24,5 +24,5 @@ Clone the Pollifi repo
 Enter the app folder  
 `cd app`
 
-Run the app  
+Run the webapplication with firebase emulators  
 `npm run dev`

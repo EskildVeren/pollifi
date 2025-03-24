@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm install && vite",
+    "dev": "npm install && vite && firebase emulators:start",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "emulators": "firebase emulators:start"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.2",
