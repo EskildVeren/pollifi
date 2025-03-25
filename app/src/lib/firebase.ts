@@ -29,13 +29,11 @@ const mode = import.meta.env.MODE;
 
 // Uses production firebase services
 if (mode === "production") {
-  console.log("Running in production mode");
   firebaseAuth = getAuth(app);
 }
 
 // Uses emulator firebase services
 if (mode === "development") {
-  console.log("Running in development mode");
   firebaseAuth = getAuth();
   connectAuthEmulator(firebaseAuth, "http://localhost:9099");
 }
