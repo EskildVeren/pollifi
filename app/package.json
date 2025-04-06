@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm install && firebase emulators:start --project=pollify & vite --mode development",
+    "dev": "npm install && vite --mode development",
     "build": "tsc -b && vite build --mode production",
     "lint": "eslint .",
     "preview": "vite preview",
-    "emulators": "firebase emulators:start"
+    "emulators": "firebase emulators:start --project=pollify"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.2",
